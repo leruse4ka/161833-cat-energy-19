@@ -1,7 +1,7 @@
 # Личный проект «Кэт энерджи» [![Build status][travis-image]][travis-url] [![Dependency status][dependency-image]][dependency-url]
 
 * Студент: [Валерия Быковская](https://up.htmlacademy.ru/adaptive/19/user/161833).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Аверин](https://htmlacademy.ru/profile/id1061531).
 
 ---
 
