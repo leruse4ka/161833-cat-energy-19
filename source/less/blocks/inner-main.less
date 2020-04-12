@@ -1,6 +1,31 @@
+.inner-main {
+  width: 320px;
+  margin: 0 auto;
+}
+
 .inner-main__title {
   margin: 24px 20px;
   font-weight: normal;
   font-size: 36px;
   line-height: 60px;
+}
+
+@media (min-width: @tablet-width) {
+  .inner-main {
+    width: @tablet-width;
+  }
+
+  .inner-main__title {
+    .big-font;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .inner-main {
+    width: 1300px;
+  }
+
+  .inner-main__title {
+    padding: 0 40px;
+  }
 }

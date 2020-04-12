@@ -1,33 +1,99 @@
 .main-content {
+  width: 320px;
+  margin: 0 auto;
   margin-bottom: 22px;
-  padding-top: 32px;
   color: @white;
 }
 
 .main-content__inner {
-  padding: 30px 20px;
-  background-color: #64a83b;
+  box-sizing: border-box;
+  height: 305px;
+  padding: 32px 20px;
+  background-color: @green;
   background-image: url("../img/index-background-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .main-content__title {
-  margin-bottom: 10px;
+  font-weight: normal;
   font-size: 36px;
   line-height: 36px;
+  text-align: center;
 }
 
 .main-content__slogan {
+  margin-top: 20px;
   font-size: 14px;
   line-height: 14px;
+  text-align: center;
   text-transform: uppercase;
 }
 
+.main-content__image {
+  width: 280px;
+  height: 271px;
+  margin-top: -115px;
+  margin-bottom: 3px;
+  margin-left: 30px;
+}
+
 .main-content__button {
-  margin-right: 20px;
-  margin-left: 20px;
+  display: inline-block;
+  margin: 0 20px;
+  padding: 13px 60px;
   color: @white;
-  background-color: #68b738;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: @green;
   border: none;
+}
+
+@media (min-width: @tablet-width) {
+  .main-content {
+    position: relative;
+    width: 768px;
+    margin: 0 auto;
+    padding: 0;
+    color: @black;
+  }
+
+  .main-content__inner {
+    width: 470px;
+    margin-left: 90px;
+    background-color: @white;
+    background-image: none;
+  }
+
+  .main-content__title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-size: 60px;
+    line-height: 60px;
+    text-align: left;
+  }
+
+  .main-content__slogan {
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+  }
+
+  .main-content__image {
+    width: 709px;
+    margin: 0 30px;
+  }
+
+  .main-content__button {
+    position: absolute;
+    top: 225px;
+    left: 90px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-content {
+    width: 1300px;
+    margin: 0 auto;
+  }
 }
