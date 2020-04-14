@@ -1,6 +1,4 @@
 .main-content {
-  width: 320px;
-  margin: 0 auto;
   margin-bottom: 22px;
   color: @white;
 }
@@ -8,7 +6,7 @@
 .main-content__inner {
   box-sizing: border-box;
   height: 305px;
-  padding: 32px 20px;
+  padding: 32px 0;
   background-color: @green;
   background-image: url("../img/index-background-mobile@1x.jpg");
   background-repeat: no-repeat;
@@ -31,16 +29,13 @@
 }
 
 .main-content__image {
-  width: 280px;
   height: 271px;
   margin-top: -115px;
   margin-bottom: 3px;
-  margin-left: 30px;
 }
 
 .main-content__button {
   display: inline-block;
-  margin: 0 20px;
   padding: 13px 60px;
   color: @white;
   text-transform: uppercase;
@@ -59,18 +54,19 @@
   }
 
   .main-content__inner {
-    width: 470px;
-    margin-left: 90px;
+    width: 427px;
+    height: 245px;
+    margin-left: 117px;
     background-color: @white;
     background-image: none;
   }
 
   .main-content__title {
     margin: 0;
-    margin-bottom: 25px;
-    font-size: 60px;
-    line-height: 60px;
+    margin-top: 17px;
+    margin-bottom: 42px;
     text-align: left;
+    .big-font();
   }
 
   .main-content__slogan {
@@ -81,19 +77,43 @@
 
   .main-content__image {
     width: 709px;
+    height: 589px;
     margin: 0 30px;
   }
 
   .main-content__button {
     position: absolute;
-    top: 225px;
-    left: 90px;
+    top: 280px;
+    left: 118px;
+    padding: 15px 25px;
+    font-size: 20px;
+    line-height: 20px;
   }
 }
 
 @media (min-width: @desktop-width) {
   .main-content {
     width: 1300px;
+    height: 570px;
     margin: 0 auto;
+  }
+
+  .main-content__inner {
+    margin-top: 33px;
+    margin-left: 120px;
+  }
+
+  .main-content__button {
+    top: 282px;
+    left: 120px;
+    padding: 16px 27px;
+  }
+
+  .main-content__image {
+    position: absolute;
+    top: -20px;
+    left: 490px;
+    width: 552px;
+    height: 499px;
   }
 }
