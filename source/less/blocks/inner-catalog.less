@@ -1,18 +1,30 @@
 .inner-catalog__list-item {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  .list-reset;
 }
 
 .inner-catalog__item {
-  padding: 0 20px;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  height: 210px;
+  margin-bottom: 1px;
   border-top: @borderGray;
 }
 
+.inner-catalog__item-link {
+  display: block;
+  width: 140px;
+  height: 144px;
+}
+
+.inner-catalog__item-description {
+  margin-bottom: 0;
+}
+
 .inner-catalog__item-title {
+  width: 73px;
   font-weight: normal;
   line-height: 20px;
-  font-size: 16px;
 }
 
 .inner-catalog__item-desc-left {
@@ -30,29 +42,20 @@
 }
 
 .inner-catalog__button {
+  display: block;
   margin-bottom: 25px;
   padding: 10px 110px;
   line-height: 20px;
   color: @white;
+  text-transform: uppercase;
   text-decoration: none;
   background-color: #68b738;
   border: none;
 }
 
-.inner-catalog__items-show {
-  padding: 0 20px;
-  border-top: @borderGray;
-  border-bottom: @borderGray;
-}
-
 .inner-catalog__plus {
   margin: 27px 125px;
   opacity: 0.2;
-}
-
-.inner-catalog__show-title {
-  font-weight: normal;
-  line-height: 20px;
 }
 
 .inner-catalog__show-desk {
@@ -68,4 +71,75 @@
   text-transform: uppercase;
   text-decoration: none;
   background-color: #f2f2f2;
+}
+
+@media (min-width: @tablet-width) {
+  .inner-catalog__list-item {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .inner-catalog__item {
+    flex-direction: column;
+    width: 324px;
+    height: 431px;
+    margin-top: 140px;
+    margin-right: 60px;
+    background-color: #f2f2f2;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      background-color: @white;
+      border: 1px solid #e7e7e7;
+    }
+  }
+
+  .inner-catalog__item-link {
+    margin-top: -48px;
+  }
+
+  .inner-catalog__item-title {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  .inner-catalog__item-desc-left {
+    font-size: 16px;
+  }
+
+  .inner-catalog__item-desc-right {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .inner-catalog__item {
+    width: 245px;
+    margin-right: 80px;
+
+    &:nth-child(even) {
+      margin-right: 80px;
+    }
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+
+  .inner-catalog__button {
+    box-sizing: border-box;
+    width: 169px;
+    margin-left: 38px;
+    padding: 10px 50px;
+  }
+
+  .inner-catalog__show-all {
+    box-sizing: border-box;
+    width: 169px;
+    margin-left: 38px;
+    padding: 10px 35px;
+  }
 }

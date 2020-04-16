@@ -1,6 +1,19 @@
 .inner-main__title {
-  margin: 24px 20px;
+  margin: 24px 0;
   font-weight: normal;
   font-size: 36px;
   line-height: 60px;
+}
+
+@media (min-width: @tablet-width) {
+  .inner-main__title {
+    margin-top: 50px;
+    .big-font;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .inner-main__title {
+    padding: 0 40px;
+  }
 }

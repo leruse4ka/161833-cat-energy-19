@@ -1,21 +1,18 @@
-.index-catalog {
-  padding: 0 20px;
-}
-
 .index-catalog__item-list {
-  padding: 0;
-  margin: 0;
-  list-style: none;
+  .list-reset;
 }
 
 .index-catalog__item {
+  box-sizing: border-box;
+  height: 266px;
   margin-bottom: 20px;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: #f2f2f2;
 }
 
 .index-catalog__title {
-  margin-bottom: 20px;
+  position: relative;
+  margin-bottom: 25px;
   font-weight: normal;
   font-size: 24px;
   line-height: 37.02px;
@@ -24,6 +21,7 @@
 }
 
 .index-catalog__description {
+  margin-bottom: 20px;
   font-size: 14px;
   line-height: 18px;
   font-family: @arial;
@@ -31,10 +29,99 @@
 }
 
 .index-catalog__link {
+  position: relative;
+  display: inline-block;
+  margin-top: 20px;
   margin-bottom: 20px;
   font-size: 16px;
   line-height: 16px;
-  color: #111111;
+  color: @black;
   text-transform: uppercase;
   text-decoration: none;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    right: -32px;
+    width: 24px;
+    height: 11px;
+    background-image: url("../img/icon-right-arrow-long.svg");
+  }
+}
+
+
+@media (min-width: @tablet-width) {
+  .index-catalog {
+    margin-top: 20px;
+  }
+
+  .index-catalog__item {
+    box-sizing: border-box;
+    width: 708px;
+    height: 372px;
+    padding-left: 52px;
+    margin-bottom: 30px;
+  }
+
+  .index-catalog__title {
+    margin-top: 68px;
+    font-size: 36px;
+    text-align: left;
+  }
+
+  .index-catalog__description {
+    margin-bottom: 33px;
+    width: 375px;
+    min-height: 100px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .index-catalog__link {
+    font-size: 20px;
+    line-height: 20px;
+
+    &::after {
+      top: 5px;
+      right: -48px;
+    }
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .index-catalog {
+    margin-top: 34px;
+  }
+
+  .index-catalog__item-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .index-catalog__item {
+    width: 570px;
+    padding: 0 52px;
+
+    &:nth-child(odd) {
+      margin-right: 80px;
+    }
+  }
+
+  .index-catalog__title {
+    margin-top: 73px;
+    margin-bottom: 73px;
+    margin-left: 19px;
+    text-align: center;
+  }
+
+  .index-catalog__description {
+    width: 466px;
+    min-width: 70px;
+    margin-bottom: 0;
+  }
+
+  .index-catalog__link {
+    margin: 0;
+  }
 }
