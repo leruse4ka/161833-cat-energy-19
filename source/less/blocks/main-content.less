@@ -6,7 +6,7 @@
 .main-content__inner {
   box-sizing: border-box;
   height: 305px;
-  padding: 32px 0;
+  padding: 28px 0;
   background-color: @green;
   background-image: url("../img/index-background-mobile@1x.jpg");
   background-repeat: no-repeat;
@@ -14,6 +14,8 @@
 }
 
 .main-content__title {
+  margin: 0;
+  padding: 0;
   font-weight: normal;
   font-size: 36px;
   line-height: 36px;
@@ -21,7 +23,7 @@
 }
 
 .main-content__slogan {
-  margin-top: 20px;
+  margin-top: 25px;
   font-size: 14px;
   line-height: 14px;
   text-align: center;
@@ -30,18 +32,29 @@
 
 .main-content__image {
   height: 271px;
-  margin-top: -115px;
-  margin-bottom: 3px;
+  margin-top: -137px;
 }
 
 .main-content__button {
   display: inline-block;
-  padding: 13px 60px;
+  padding: 11px 73px;
   color: @white;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: @green;
+  background-color: #68b738;
+  font-size: 14px;
+  line-height: 18px;
   border: none;
+
+  &:hover,
+  &:focus {
+    background-color: #5eaa2f;
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+    background-color: #5eaa2f;
+  }
 }
 
 @media (min-width: @tablet-width) {
@@ -63,8 +76,8 @@
 
   .main-content__title {
     margin: 0;
-    margin-top: 17px;
-    margin-bottom: 42px;
+    margin-top: 22px;
+    margin-bottom: 41px;
     text-align: left;
     .big-font();
   }
@@ -83,9 +96,9 @@
 
   .main-content__button {
     position: absolute;
-    top: 280px;
-    left: 118px;
-    padding: 15px 25px;
+    top: 279px;
+    left: 119px;
+    padding: 16px 27px;
     font-size: 20px;
     line-height: 20px;
   }
@@ -101,6 +114,8 @@
   .main-content__inner {
     margin-top: 33px;
     margin-left: 120px;
+
+    background-color: transparent;
   }
 
   .main-content__button {
@@ -111,8 +126,8 @@
 
   .main-content__image {
     position: absolute;
-    top: -20px;
-    left: 490px;
+    top: -30px;
+    left: 485px;
     width: 552px;
     height: 499px;
   }
