@@ -11,6 +11,10 @@
   .list-reset;
 }
 
+.main-footer svg {
+  fill: #666666;
+}
+
 .main-footer__item {
   margin: 22px 38px;
 }
@@ -45,15 +49,46 @@
 
   .main-footer__logo {
     margin: 0;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 
   .main-footer__socials {
     border: none;
   }
 
+  .main-footer__socials svg {
+    &:hover,
+    &:focus {
+      fill: #68b738;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
   .main-footer__copyright {
     margin: 0;
     margin-top: 10px;
+  }
+
+  .main-footer__copyright-link {
+    &:hover .main-footer__copyright-link-img,
+    &:focus .main-footer__copyright-link-img {
+      fill: #68b738;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
   }
 }
 

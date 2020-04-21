@@ -16,15 +16,6 @@
 
 .main-header__logo-link {
   padding: 0;
-
-  &:hover,
-  &:focus {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
 }
 
 @media (min-width: @tablet-width) {
@@ -33,6 +24,17 @@
     justify-content: space-between;
     height: 90px;
     border: none;
+  }
+
+  .main-header__logo-link {
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 
   .main-header__logo-image {

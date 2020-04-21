@@ -6,9 +6,12 @@
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
-  height: 210px;
-  margin-bottom: 1px;
+  height: 209px;
   border-top: @borderGray;
+
+  &:last-child {
+    border-bottom: @borderGray;
+  }
 }
 
 .inner-catalog__item-link {
@@ -22,23 +25,31 @@
 }
 
 .inner-catalog__item-title {
-  width: 73px;
+  width: 95px;
+  text-transform: uppercase;
   font-weight: normal;
   line-height: 20px;
+  font-size: 16px;
+  padding-top: 5px;
+  margin-bottom: 11px;
 }
 
-.inner-catalog__item-desc-left {
+.inner-catalog__table {
+  margin: 0;
+  padding: 0;
+  width: 140px;
+  height: 55px;
   font-size: 12px;
   line-height: 16px;
   font-family: @arial;
   color: #444444;
+  border: none;
+  border-spacing: 0;
 }
 
-.inner-catalog__item-desc-right {
-  font-size: 12px;
-  line-height: 16px;
-  font-family: @arial;
-  color: #444444;
+.inner-catalog__table-tr {
+  display: flex;
+  justify-content: space-between;
 }
 
 .inner-catalog__button {
@@ -50,15 +61,34 @@
   text-transform: uppercase;
   text-decoration: none;
   background-color: #68b738;
-  border: none;
 }
 
-.inner-catalog__plus {
-  margin: 27px 125px;
-  opacity: 0.2;
+.inner-catalog__show-title {
+  margin: 0 auto 9px;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  padding-top: 79px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 26px;
+    left: 50%;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    background-image: url("../img/icon-plus-mobile.svg");
+    background-repeat: no-repeat;
+    opacity: 0.2;
+  }
 }
+
 
 .inner-catalog__show-desk {
+  margin: 0 auto;
   font-size: 12px;
   line-height: 16px;
   font-family: @arial;
@@ -66,7 +96,11 @@
 }
 
 .inner-catalog__show-all {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 25px;
   padding: 10px 94px;
+  line-height: 20px;
   color: #444444;
   text-transform: uppercase;
   text-decoration: none;
@@ -81,6 +115,7 @@
 
   .inner-catalog__item {
     flex-direction: column;
+    align-items: center;
     width: 324px;
     height: 431px;
     margin-top: 140px;
@@ -99,19 +134,78 @@
 
   .inner-catalog__item-link {
     margin-top: -48px;
+    margin-bottom: 40px;
   }
 
   .inner-catalog__item-title {
     font-size: 20px;
     line-height: 20px;
+    margin: 18px auto;
+    width: 136px;
+    text-align: center;
   }
 
-  .inner-catalog__item-desc-left {
+  .inner-catalog__table {
     font-size: 16px;
+    min-width: 250px;
+    min-height: 90px;
+    margin-bottom: 30px;
   }
 
-  .inner-catalog__item-desc-right {
+  .inner-catalog__table-tr {
+    border-bottom: 1px solid #cdcdcd;
+    padding: 7px 0;
+  }
+
+  .inner-catalog__button {
+    padding: 11px 94px;
+
+    &:hover,
+    &:focus {
+      background-color: #5eaa2f;
+    }
+
+    &:active {
+      color: rgba(255, 255, 255, 0.3);
+      background-color: #5eaa2f;
+    }
+  }
+
+  .inner-catalog__show-title {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 160px 80px 0;
+    text-align: center;
+
+
+    &::before {
+      top: 50px;
+      width: 60px;
+      height: 60px;
+      margin-left: -30px;
+      background-image: url("../img/icon-plus.svg");
+    }
+  }
+
+  .inner-catalog__show-desk {
     font-size: 16px;
+    line-height: auto;
+    padding: 21px 75px;
+    text-align: center;
+  }
+
+  .inner-catalog__show-all {
+    margin-top: 65px;
+    padding: 9px 80px;
+
+    &:hover,
+    &:focus {
+      background-color: #ebebeb;
+    }
+
+    &:active {
+      color: rgba(68, 68, 68, 0.3);
+    }
   }
 }
 
@@ -119,6 +213,8 @@
   .inner-catalog__item {
     width: 245px;
     margin-right: 80px;
+    margin-top: 142px;
+    border: none;
 
     &:nth-child(even) {
       margin-right: 80px;
@@ -129,17 +225,34 @@
     }
   }
 
+  .inner-catalog__item-title {
+    margin: 21px auto;
+  }
+
+  .inner-catalog__table {
+    min-width: 170px;
+  }
+
   .inner-catalog__button {
     box-sizing: border-box;
     width: 169px;
-    margin-left: 38px;
-    padding: 10px 50px;
+    padding: 10px 55px;
+  }
+
+  .inner-catalog__show-title {
+    padding: 160px 50px 0;
+    margin-top: 3px;
+  }
+
+  .inner-catalog__show-desk {
+    padding: 0 30px;
+    margin: 21px 0;
+    line-height: auto;
   }
 
   .inner-catalog__show-all {
     box-sizing: border-box;
     width: 169px;
-    margin-left: 38px;
     padding: 10px 35px;
   }
 }
