@@ -7,13 +7,18 @@
   <meta name="format-detection" content="telephone=no">
   <link href="css/style.css" rel="stylesheet">
   <link href="css/normalize.css" rel="stylesheet">
+  <script src="js/picturefill.js" async></script>
 </head>
 <body>
   <div class="container">
     <header class="main-header">
       <div class="main-header__wrapper">
         <a class="main-header__logo-link" href="index.html">
-          <img class="main-header__logo-image" src="img/logo-mobile.svg" width="191" height="39" alt="Логотип КэтЭнерджи">
+          <picture>
+            <source media="(min-width: 1300px)" srcset="img/logo-desktop.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
+            <img class="main-header__logo-image" src="img/logo-mobile.svg" width="191" height="39" alt="Логотип КэтЭнерджи">
+          </picture>
         </a>
       </div>
       <nav class="main-menu main-menu--closed main-menu--nojs">
