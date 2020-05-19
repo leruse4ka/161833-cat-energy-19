@@ -1,9 +1,9 @@
 ymaps.ready(function () {
-  var myMap = new ymaps.Map('map', {
+  var myMap = new ymaps.Map("map", {
           center: [59.938635, 30.323118],
           zoom: 16
       }, {
-          searchControlProvider: 'yandex#search'
+          searchControlProvider: "yandex#search"
       }),
 
       // Создаём макет содержимого.
@@ -12,8 +12,8 @@ ymaps.ready(function () {
       )
 
       myPlacemark = new ymaps.Placemark([59.938635, 30.323118], {}, {
-        iconLayout: 'default#image',
-        iconImageHref: '../img/map-pin.png',
+        iconLayout: "default#image",
+        iconImageHref: "../img/map-pin.png",
         iconImageSize: [62, 53]
     });
 

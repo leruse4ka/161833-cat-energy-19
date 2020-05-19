@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="format-detection" content="telephone=no">
   <link href="css/style.min.css" rel="stylesheet">
-  <link href="css/normalize.css" rel="stylesheet">
-  <script src="https://api-maps.yandex.ru/2.1?apikey=2182b957-5c1f-4204-8e87-282d2525f50d&lang=ru_RU"></script>
+  <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
 </head>
 
 <body>
@@ -68,21 +67,25 @@
           <label for="need-advice">Не знаю (Нужен ваш совет)</label>
         </fieldset>
         <fieldset class="form__owner-info">
-          <legend class="form__owner-info-desc">Контактные данные (владельца кота)</legend>
+          <div class="form__owner-info-desc">Контактные данные (владельца кота)</div>
           <div class="form__owner-info-wrapper">
-            <label for="email">E-mail:*</label>
-            <input class="input-required" type="email" name="email" id="email" placeholder="kuklachev@gmail.com" pattern="/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i">
-            <label for="tel">Телефон:*</label>
-            <input class="input-required" type="tel" name="tel" id="tel" placeholder="8 (960) 900-60-90" pattern="\d\(\d{3}\)\d{3}-\d{2}-\d{2}">
+            <div class="form__owner-info-container">
+              <label for="email">E-mail:*</label>
+              <input class="input-required" type="email" name="email" id="email" placeholder="kuklachev@gmail.com" pattern="/^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i">
+            </div>
+            <div class="form__owner-info-container">
+              <label for="tel">Телефон:*</label>
+              <input class="input-required" type="tel" name="tel" id="tel" placeholder="8 (960) 900-60-90" pattern="\d\(\d{3}\)\d{3}-\d{2}-\d{2}">
+            </div>
           </div>
         </fieldset>
         <fieldset class="form__comment">
-          <legend class="form__comment-desc">Комментарий</legend>
+          <div class="form__comment-desc">Комментарий</div>
           <textarea name="comment" id="comment" cols="30" rows="10"
             placeholder="Расскажите обо всех повадках кота"></textarea>
         </fieldset>
         <fieldset class="form__additionally">
-          <legend class="form__additionally-desc">Дополнительно</legend>
+          <div class="form__additionally-desc">Дополнительно</div>
           <div class="form__additionally-wrapper">
             <input type="checkbox" name="sweetener" id="sweetener" checked>
             <label for="sweetener">Сахарозаменитель</label>
@@ -128,7 +131,7 @@
       <ul class="main-footer__socials">
         <li class="main-footer__item">
           <a class="main-footer__vkontakte" href="#">
-            <span class="main-footer__link-title visually-hidden">Перехолд на страницу вконтакте</span>
+            <span class="main-footer__link-title visually-hidden">Переход на страницу вконтакте</span>
             <svg width="22" height="12">
               <use xlink:href="img/sprite.svg#icon-vk"></use>
             </svg>
@@ -161,11 +164,8 @@
       </div>
     </div>
   </footer>
-  <script src="js/main-menu.js"></script>
-  <script src="js/svg4everybody.js"></script>
-  <script> svg4everybody ( ) ;</script>
-  <script src="js/form.js"></script>
-  <script src="js/mapbasics.js"></script>
+  <script src="js/scripts.min.js"></script>
   <script src="js/picturefill.js" async></script>
+  <script src="https://api-maps.yandex.ru/2.1?apikey=2182b957-5c1f-4204-8e87-282d2525f50d&lang=ru_RU"></script>
 </body>
 </html>

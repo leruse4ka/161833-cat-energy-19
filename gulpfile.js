@@ -17,6 +17,7 @@ var del = require("del");
 var server = require("browser-sync").create();
 var uglify = require("gulp-uglify");
 var htmlmin = require("gulp-htmlmin");
+var concat = require("gulp-concat");
 
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
@@ -88,7 +89,8 @@ gulp.task("clean", function () {
 });
 
 gulp.task("common-js", function() {
-  return gulp.src("source/js/*.js")
+  return gulp.src(["source/js/{form,main-menu,map.basics,svg4everybody}.js"])
+  .pipe(concat("scripts.min.js"))
   .pipe(uglify())
   .pipe(gulp.dest("build/js"));
 });
@@ -97,8 +99,8 @@ gulp.task("build", gulp.series(
   "clean",
   "copy",
   "css",
-  "sprite",
   "common-js",
+  "sprite",
   "minify",
   "html"
 ));

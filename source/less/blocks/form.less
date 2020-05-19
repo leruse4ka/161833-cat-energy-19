@@ -15,14 +15,6 @@
 .form input {
   border: 1px solid rgba(205, 205, 205, 0.5);
   outline: none;
-
-  &:hover {
-    border: 1px solid rgba(205, 205, 205, 1);
-  }
-
-  &:focus {
-    border: 2px solid rgba(68, 68, 57, 1);
-  }
 }
 
 .form__cat-info {
@@ -41,6 +33,7 @@
   justify-content: space-between;
   margin-bottom: 14px;
   box-sizing: border-box;
+  height: 45px;
 
   &:last-child {
     margin-bottom: 22px;
@@ -48,8 +41,8 @@
 }
 
 .form__cat-info input {
+  padding-left: 15px;
   color: #444444;
-  padding: 15px;
   box-sizing: border-box;
   flex-grow: 2;
   min-width: 172px;
@@ -150,13 +143,14 @@ input[type="radio"]:checked + label::after {
   padding-top: 27px;
   margin-bottom: 34px;
   position: relative;
+  width: 200px;
 
   &::after {
     content: "";
-    width: 99px;
+    width: 100vw;
     height: 3px;
     top: 54%;
-    right: -8px;
+    left: 200px;
     position: absolute;
     background-color: #68b738;
   }
@@ -179,9 +173,8 @@ input[type="radio"]:checked + label::after {
 
 .form__owner-info-wrapper input {
   color: #444444;
-  padding: 15px;
+  padding: 15px 15px 10px;
   box-sizing: border-box;
-  height: 45px;
   flex-grow: 2;
   min-width: 172px;
   margin-bottom: 13px;
@@ -217,10 +210,10 @@ input[type="tel"] {
 
   &::after {
     content: "";
-    width: 158px;
+    width: 100vw;
     height: 3px;
     top: 57%;
-    right: -20px;
+    left: 143px;
     position: absolute;
     background-color: #68b738;
   }
@@ -255,10 +248,10 @@ input[type="tel"] {
 
   &::after {
     content: "";
-    width: 158px;
+    width: 100vw;
     height: 3px;
     top: 46%;
-    right: -21px;
+    left: 165px;
     position: absolute;
     background-color: #68b738;
   }
@@ -359,6 +352,16 @@ input[type="checkbox"]:checked + label::after {
     line-height: 20px;
   }
 
+  .form input {
+    &:hover {
+      border: 1px solid rgba(205, 205, 205, 1);
+    }
+
+    &:focus {
+      border: 2px solid rgba(68, 68, 57, 1);
+    }
+  }
+
   .form__cat-info-wrapper {
     min-width: 628px;
     margin-bottom: 17px;
@@ -435,21 +438,23 @@ input[type="checkbox"]:checked + label::after {
     margin-left: -40px;
     background-color: @white;
     padding-right: 115px;
+    width: 541px;
 
     &::before {
       content: "";
       position: absolute;
       top: 62%;
-      width: 40px;
+      width: 2000px;
       height: 3px;
-      left: -40px;
+      right: 0;
       background-color: #68b738;
+      z-index: -1;
     }
 
     &::after {
-      width: 145px;
+      width: 100vw;
       top: 62%;
-      right: -72px;
+      left: 590px;
     }
   }
 
@@ -462,9 +467,14 @@ input[type="checkbox"]:checked + label::after {
   .form__owner-info-wrapper input {
     min-width: 71.74%;
     margin-right: 35px;
-    margin-bottom: 20px;
     padding: 25px 16px;
-    height: 52px;
+  }
+
+  .form__owner-info-container {
+    height: 56px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   input[type="email"] {
@@ -507,24 +517,26 @@ input[type="checkbox"]:checked + label::after {
     line-height: 36px;
     padding-top: 30px;
     padding-right: 450px;
-    margin-left: -20px;
-    padding-left: 20px;
+    margin-left: -40px;
+    padding-left: 37px;
     padding-bottom: 30px;
+    background-color: @white;
 
     &::before {
       content: "";
       position: absolute;
       top: 55%;
-      width: 40px;
+      width: 100vw;
       height: 3px;
-      left: -60px;
+      right: 0;
       background-color: #68b738;
+      z-index: -1;
     }
 
     &::after {
-      width: 480px;
+      width: 100vw;
       top: 55%;
-      right: -70px;
+      left: 250px;
     }
   }
 
@@ -547,24 +559,26 @@ input[type="checkbox"]:checked + label::after {
     line-height: 36px;
     padding-top: 30px;
     padding-right: 450px;
-    margin-left: -20px;
-    padding-left: 20px;
+    margin-left: -40px;
+    padding-left: 37px;
     padding-bottom: 48px;
+    background-color: @white;
 
     &::before {
       content: "";
       position: absolute;
       top: 47%;
-      width: 40px;
+      width: 100vw;
       height: 3px;
-      left: -60px;
+      right: 0;
       background-color: #68b738;
+      z-index: -1;
     }
 
     &::after {
-      width: 480px;
+      width: 100vw;
       top: 47%;
-      right: -70px;
+      left: 290px;
     }
   }
 
@@ -685,12 +699,20 @@ input[type="checkbox"]:checked + label::after {
     min-width: 205px;
     flex-grow: 1;
     width: 486px;
-    padding: 15px 18px;
     height: 56px;
 
     &:last-child {
       margin-right: 0;
       width: 472px;
+    }
+  }
+
+  .form__owner-info-container {
+    flex-direction: row;
+    width: 47%;
+
+    &:first-child {
+      margin-right: 73px;
     }
   }
 

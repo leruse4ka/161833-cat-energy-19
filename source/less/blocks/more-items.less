@@ -8,15 +8,20 @@
   line-height: 24px;
   font-weight: normal;
   position: relative;
+  background-color: @white;
+  width: 235px;
+  margin-left: -20px;
+  padding-left: 20px;
 
   &::after {
     content: "";
-    width: 53px;
+    width: 100vw;
     height: 3px;
     position: absolute;
     top: 53%;
-    right: -20px;
+    right: -50px;
     background-color: #68b738;
+    z-index: -1;
   }
 }
 
@@ -117,22 +122,27 @@
   }
 
   .more-items__title {
-    width: 410px;
-    box-sizing: border-box;
+    width: 415px;
     font-size: 36px;
+    box-sizing: border-box;
     line-height: 36px;
+    margin-left: 0;
     padding-left: 37px;
     background-color: #ffffff;
 
-    &::after {
+    &::before {
       content: "";
-      width: @tablet-width;
+      width: 100vw;
       height: 3px;
-      position: absolute;
-      top: 63%;
-      left: -30px;
       background-color: #68b738;
+      position: absolute;
+      top: 53%;
+      right: 0;
       z-index: -1;
+    }
+
+    &::after {
+      left: 370px;
     }
   }
 
