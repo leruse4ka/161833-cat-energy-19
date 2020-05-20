@@ -63,7 +63,8 @@ gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    "source/*.ico"
+    "source/*.ico",
+    "source/js/picturefill.js"
   ], {
     base: "source"
   })
@@ -89,7 +90,7 @@ gulp.task("clean", function () {
 });
 
 gulp.task("common-js", function() {
-  return gulp.src(["source/js/{form,main-menu,map.basics,svg4everybody}.js"])
+  return gulp.src(["source/js/{form,main-menu,mapbasics,svg4everybody}.js"])
   .pipe(concat("scripts.min.js"))
   .pipe(uglify())
   .pipe(gulp.dest("build/js"));

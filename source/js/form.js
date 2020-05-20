@@ -1,10 +1,11 @@
 var form = document.querySelector("form");
-var name_form = form.querySelector("[name=name-form]");
-var weight = form.querySelector("[name=weight");
-var email = form.querySelector("[name=email]");
-var tel = form.querySelector("[name=tel]");
-var input = form.querySelector(".input-required");
+var name_form = document.querySelector("[name=name-form]");
+var weight = document.querySelector("[name=weight");
+var email = document.querySelector("[name=email]");
+var tel = document.querySelector("[name=tel]");
+var input = document.querySelector(".input-required");
 
+if (form) {
 form.addEventListener("submit", function(evt) {
   if (!name_form.value || !email.value || !tel.value || !weight.value) {
     evt.preventDefault();
@@ -13,3 +14,4 @@ form.addEventListener("submit", function(evt) {
     form.classList.add("input-error");
   }
 });
+}
