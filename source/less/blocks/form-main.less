@@ -1,9 +1,39 @@
+.form-main {
+  overflow-x: hidden;
+}
+
 .form-main__title {
   font-size: 36px;
   line-height: 60px;
+  font-weight: normal;
+  margin-top: 15px;
 }
 
 .form-main__subtitle {
   font-size: 14px;
   line-height: 18px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  width: 237px;
+}
+
+@media (min-width: @tablet-width) {
+  .form-main__title {
+    .big-font();
+    margin-top: 49px;
+  }
+
+  .form-main__subtitle {
+    font-size: 20px;
+    line-height: 30px;
+    width: 350px;
+    margin-top: 56px;
+    margin-left: 40px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .form-main__subtitle {
+    margin-left: 0;
+  }
 }

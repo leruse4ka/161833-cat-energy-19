@@ -15,6 +15,9 @@ var posthtml = require("gulp-posthtml");
 var include = require("posthtml-include");
 var del = require("del");
 var server = require("browser-sync").create();
+var uglify = require("gulp-uglify");
+var htmlmin = require("gulp-htmlmin");
+var concat = require("gulp-concat");
 
 gulp.task("css", function () {
   return gulp.src("source/less/style.less")
@@ -35,10 +38,10 @@ gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
       imagemin.optipng({optimizationLevel: 3}),
-      imagemin.jpegtran({progressive:true}),
+      imagemin.mozjpeg({progressive: true}),
       imagemin.svgo()
     ]))
-    .pipe(gulp.dest("source/img"));
+    .pipe(gulp.dest("build/img"));
 });
 
 gulp.task("webp", function () {
@@ -48,7 +51,7 @@ gulp.task("webp", function () {
 });
 
 gulp.task("sprite", function () {
-  return gulp.src("source/img/icon-*.svg")
+  return gulp.src("source/img/{icon-vk,icon-fb,icon-insta,htmlacademy}.svg")
   .pipe(svgstore({
     inlineSvg:true
   }))
@@ -60,8 +63,8 @@ gulp.task("copy", function () {
   return gulp.src([
     "source/fonts/**/*.{woff,woff2}",
     "source/img/**",
-    "source/js/**",
-    "source/*.ico"
+    "source/*.ico",
+    "source/js/picturefill.js"
   ], {
     base: "source"
   })
@@ -76,15 +79,30 @@ gulp.task("html", function () {
   .pipe(gulp.dest("build"));
 });
 
+gulp.task("minify", function () {
+  return gulp.src("source/*.html")
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest("build"));
+});
+
 gulp.task("clean", function () {
   return del("build");
+});
+
+gulp.task("common-js", function() {
+  return gulp.src(["source/js/{form,main-menu,mapbasics,svg4everybody}.js"])
+  .pipe(concat("scripts.min.js"))
+  .pipe(uglify())
+  .pipe(gulp.dest("build/js"));
 });
 
 gulp.task("build", gulp.series(
   "clean",
   "copy",
   "css",
+  "common-js",
   "sprite",
+  "minify",
   "html"
 ));
 
@@ -98,7 +116,7 @@ gulp.task("server", function () {
   });
 
   gulp.watch("source/less/**/*.less", gulp.series("css"));
-  gulp.watch("source/img/icon-*.svg", gulp.series("sprite", "html", "refresh"));
+  gulp.watch("source/img/{icon-*,htmlacademy}.svg", gulp.series("sprite", "html", "refresh"));
   gulp.watch("source/*.html", gulp.series("html", "refresh"));
 });
 
