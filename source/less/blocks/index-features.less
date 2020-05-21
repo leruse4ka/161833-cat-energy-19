@@ -121,7 +121,8 @@
     }
 
     &:first-child::after {
-      content: "1";
+      counter-increment: features;
+      content: "" counter(features) " ";
       position: absolute;
       top: -42px;
       right: 95px;
@@ -129,7 +130,8 @@
     }
 
     &:nth-child(2)::after {
-      content: "2";
+      counter-increment: features;
+      content: "" counter(features) " ";
       position: absolute;
       top: -40px;
       right: 80px;
@@ -137,7 +139,8 @@
     }
 
     &:nth-child(3)::after {
-      content: "3";
+      counter-increment: features;
+      content: "" counter(features) " ";
       position: absolute;
       top: -40px;
       right: 80px;
@@ -145,7 +148,8 @@
     }
 
     &:last-child::after {
-      content: "4";
+      counter-increment: features;
+      content: "" counter(features) " ";
       position: absolute;
       top: -40px;
       right: 75px;

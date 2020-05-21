@@ -8,6 +8,7 @@
   <meta name="format-detection" content="telephone=no">
   <link href="css/style.min.css" rel="stylesheet">
   <link rel="preload" href="fonts/oswaldregular.woff2" as="font">
+
 </head>
 
 <body>
@@ -128,7 +129,8 @@
               </li>
               <li class="modification__features-item">
                 60 дней
-                <p class="modification__features-item-down modification__features-item-down--width">затрачено времени</p>
+                <p class="modification__features-item-down modification__features-item-down--width">затрачено времени
+                </p>
               </li>
             </ul>
             <div class="modification__cost">
@@ -144,34 +146,33 @@
         <div class="modification__slider">
           <input class="modification__slider-before visually-hidden" type="radio" id="cat-before" name="toggle" checked>
           <input class="modification__slider-after visually-hidden" type="radio" id="cat-after" name="toggle">
-          <div class="modification__slider-wrapper" id="comparison">
-            <ul class="modification__slider-list">
-              <li class="modification__slider-item modification__slider-item-before" id="before">
-                <picture>
-                  <source type="image/webp" media="(min-width:1300px)"
-                    srcset="img/before-desktop@1x.webp 1x, img/before-desktop@2x.webp 2x">
-                  <source type="image/webp" media="(min-width:768px)"
-                    srcset="img/before-tablet@1x.webp 1x, img/before-tablet@2x.webp 2x">
-                  <source type="image/webp" srcset="img/before-mobile@1x.webp 1x, img/before-mobile@2x.webp 2x">
-                  <source media="(min-width:1300px)" srcset="img/before-desktop@1x.png 1x, img/before-desktop@2x.png 2x">
-                  <source media="(min-width:768px)" srcset="img/before-tablet@1x.png 1x, img/before-tablet@2x.png 2x">
-                  <img class="modification__slider-img" src="img/before-mobile@1x.png"
-                    srcset="img/before-mobile@2x.png 2x" alt="Изображение кота До">
-                </picture>
-              </li>
-              <li class="modification__slider-item modification__slider-item-after" id="after">
-                <picture>
-                  <source type="image/webp" media="(min-width:1300px)"
-                    srcset="img/after-desktop@1x.webp 1x, img/after-desktop@2x.webp 2x">
-                  <source type="image/webp" media="(min-width:768px)"
-                    srcset="img/after-tablet@1x.webp 1x, img/after-tablet@2x.webp 2x">
-                  <source type="image/webp" srcset="img/after-mobile@1x.webp 1x, img/after-mobile@2x.webp 2x">
-                  <source media="(min-width:1300px)" srcset="img/after-desktop@1x.png 1x, img/after-desktop@2x.png 2x">
-                  <source media="(min-width:768px)" srcset="img/after-tablet@1x.png 1x, img/after-tablet@2x.png 2x">
-                  <img class="modification__slider-img" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png 2x" alt="Изображение кота После">
-                </picture>
-              </li>
-            </ul>
+          <div class="modification__slider-list">
+            <div class="modification__slider-item modification__slider-item-before" id="before">
+              <picture>
+                <source type="image/webp" media="(min-width:1300px)"
+                  srcset="img/before-desktop@1x.webp 1x, img/before-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width:768px)"
+                  srcset="img/before-tablet@1x.webp 1x, img/before-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/before-mobile@1x.webp 1x, img/before-mobile@2x.webp 2x">
+                <source media="(min-width:1300px)" srcset="img/before-desktop@1x.png 1x, img/before-desktop@2x.png 2x">
+                <source media="(min-width:768px)" srcset="img/before-tablet@1x.png 1x, img/before-tablet@2x.png 2x">
+                <img class="modification__slider-img" src="img/before-mobile@1x.png"
+                  srcset="img/before-mobile@2x.png 2x" alt="Изображение кота До">
+              </picture>
+            </div>
+            <div class="modification__slider-item modification__slider-item-after" id="after">
+              <picture>
+                <source type="image/webp" media="(min-width:1300px)"
+                  srcset="img/after-desktop@1x.webp 1x, img/after-desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width:768px)"
+                  srcset="img/after-tablet@1x.webp 1x, img/after-tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/after-mobile@1x.webp 1x, img/after-mobile@2x.webp 2x">
+                <source media="(min-width:1300px)" srcset="img/after-desktop@1x.png 1x, img/after-desktop@2x.png 2x">
+                <source media="(min-width:768px)" srcset="img/after-tablet@1x.png 1x, img/after-tablet@2x.png 2x">
+                <img class="modification__slider-img" src="img/after-mobile@1x.png" srcset="img/after-mobile@2x.png 2x"
+                  alt="Изображение кота После">
+              </picture>
+            </div>
             <div class="modification__slider-controls">
               <label class="modification__slider-controls-before" for="cat-before">Было</label>
               <div class="modification__slider-toddle"></div>
@@ -203,7 +204,7 @@
       <div class="contacts__map" id="map"></div>
     </section>
   </main>
-  <footer class="main-footer">
+  <footer class="main-footer main-footer--index">
     <div class="container">
       <img class="main-footer__logo" src="img/logo-footer.svg" width="128" height="24" alt="Логотип КэтЭнерджи">
       <ul class="main-footer__socials">
@@ -244,7 +245,7 @@
   </footer>
   <script src="https://api-maps.yandex.ru/2.1?apikey=2182b957-5c1f-4204-8e87-282d2525f50d&lang=ru_RU"></script>
   <script src="js/scripts.min.js"></script>
-
+  <script>svg4everybody();</script>
   <script src="js/picturefill.js" async></script>
 </body>
 

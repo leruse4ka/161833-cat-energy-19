@@ -4,9 +4,9 @@
 
 .index-catalog__item {
   box-sizing: border-box;
-  height: 266px;
+  min-height: 266px;
   margin-bottom: 20px;
-  padding: 10px 20px;
+  padding: 10px 20px 0;
   background-color: #f2f2f2;
 }
 
@@ -109,7 +109,7 @@
   .index-catalog__item {
     box-sizing: border-box;
     width: 708px;
-    height: 372px;
+    min-height: 372px;
     padding-left: 52px;
     margin-bottom: 30px;
   }
@@ -159,6 +159,7 @@
     font-size: 20px;
     line-height: 20px;
     margin-top: 20px;
+    margin-bottom: 50px;
 
     &::after {
       top: 5px;
@@ -180,6 +181,7 @@
   .index-catalog__item {
     width: 570px;
     padding: 0 52px;
+    margin-top: 5px;
 
     &:nth-child(odd) {
       margin-right: 80px;
@@ -218,6 +220,10 @@
     width: 466px;
     min-width: 70px;
     margin-bottom: 0;
+  }
+
+  .index-catalog__description br {
+    display: none;
   }
 
   .index-catalog__link {

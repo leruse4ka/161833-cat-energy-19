@@ -76,7 +76,6 @@
 }
 
 .modification__slider-list {
-  .list-reset;
   position: relative;
   width: 320px;
   height: 272px;
@@ -87,8 +86,8 @@
   margin-left: -20px;
 }
 
-.modification__slider-before:checked ~ .modification__slider-wrapper .modification__slider-item-before,
-.modification__slider-after:checked ~ .modification__slider-wrapper .modification__slider-item-after {
+.modification__slider-before:checked ~ .modification__slider-list .modification__slider-item-before,
+.modification__slider-after:checked ~ .modification__slider-list .modification__slider-item-after {
   display: block;
 }
 
@@ -98,17 +97,19 @@
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 27px;
+  z-index: 10;
 }
 
 .modification__slider-controls-before {
   padding-right: 120px;
-  margin-left: 4px;
+  margin-left: -33px;
 }
 
 .modification__slider-toddle {
   width: 82px;
   height: 12px;
-  right: 50%;
+  right: 56%;
   top: 3px;
   margin-right: -42px;
   position: absolute;
@@ -196,26 +197,78 @@
   }
 
   .modification__slider {
-    margin-top: 237px;
     width: @tablet-width;
-    height: 462px;
-    background-color: #f2f2f2;
+    height: 700px;
     margin-left: -30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      background: linear-gradient(to right, #f2f2f2 50%, #eaeaea 50%);
+      width: 100%;
+      height: 463px;
+      top: 237px;
+      left: 0;
+    }
   }
 
   .modification__slider-list {
-    width: 545px;
+    width: 100%;
+    height: 700px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  .modification__slider-item {
+    width: 50%;
+    height: 700px;
+    overflow-x: hidden;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .modification__slider-item-before {
+    width: 52.6%;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to top, transparent 75%, white 25%);
+  }
+
+  .modification__slider-item-after {
+    width: 100%;
+    overflow-x: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 
   .modification__slider-img {
-    margin-top: -170px;
+    margin-top: 70px;
     margin-left: 67px;
   }
 
   .modification__slider-controls {
     font-size: 20px;
     justify-content: space-between;
-    margin-top: 95px;
+    margin-top: 605px;
+    margin-bottom: 75px;
+    width: 100%;
+  }
+
+  .modification__slider-controls label {
+    &:hover {
+      border-bottom: 1px solid #989898;
+    }
+
+    &:active {
+      border: none;
+    }
   }
 
   .modification__slider-controls-before,
@@ -224,6 +277,9 @@
   }
 
   .modification__slider-toddle {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
     width: 428px;
     height: 6px;
     margin-right: -214px;
@@ -269,15 +325,16 @@
     min-width: @desktop-width;
     position: relative;
     background-color: transparent;
+    padding-bottom: 55px;
 
     &::before {
       content: "";
-      background-color: #f2f2f2;
+      background: linear-gradient(to right, #f2f2f2 75%, #eaeaea 27.4%);
       position: absolute;
       width: 100%;
-      height: 73.1%;
+      height: 72.5%;
       z-index: -1;
-      bottom: 0;
+      top: 175px;
     }
   }
 
@@ -324,19 +381,34 @@
 
   .modification__slider {
     width: 650px;
+    height: 600px;
     margin: 0;
-    margin-top: 160px;
+    margin-top: -30px;
+    padding-left: 10px;
     box-sizing: border-box;
+    background-color: transparent;
+
+    &::before {
+      height: 465px;
+      top: 190px;
+      background: linear-gradient(to right, #f2f2f2 56%, #eaeaea 50%);
+    }
   }
 
-  .modification__slider-img {
-    margin-top: -190px;
-    margin-left: 20px;
+  .modification__slider-item-before {
+    width: 58.5%;
+    background: linear-gradient(to top, transparent 72.9%, white 25%);
+  }
+
+  .modification__slider-item img {
+    margin-top: 0;
+    margin-left: 10px;
   }
 
   .modification__slider-controls {
-    margin-top: 96px;
-    padding-left: 80px;
+    padding-left: 70px;
+    margin-bottom: 115px;
+    margin-top: 560px;
   }
 
   .modification__slider-controls-before,
@@ -349,5 +421,6 @@
 
   .modification__slider-toddle {
     margin-right: -255px;
+    width: 432px;
   }
 }

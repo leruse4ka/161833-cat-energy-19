@@ -8,43 +8,5 @@ body {
   background-color: @white;
   position: relative;
   overflow-x: hidden;
-}
-
-.visually-hidden:not(:focus):not(:active),
-input[type="checkbox"].visually-hidden,
-input[type="radio"].visually-hidden {
-  position: absolute;
-
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-
-  white-space: nowrap;
-
-  border: 0;
-
-  clip: rect(0 0 0 0);
-  clip-path: inset(100%);
-}
-
-.container {
-  width: 280px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-@media (min-width: @tablet-width) {
-  .container {
-    width: 708px;
-    padding: 0 20px;
-  }
-}
-
-@media (min-width: @desktop-width) {
-  .container {
-    width: 1220px;
-    padding: 0 40px;
-  }
+  counter-reset: features;
 }
