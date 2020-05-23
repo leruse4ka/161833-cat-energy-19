@@ -65,7 +65,7 @@
     }
   }
 
-  &:last-child::before {
+  &:nth-child(4)::before {
     background-image: url("../img/advantage-clock@1x.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -147,7 +147,7 @@
       .features-number();
     }
 
-    &:last-child::after {
+    &:nth-child(4)::after {
       counter-increment: features;
       content: "" counter(features) " ";
       position: absolute;
@@ -194,7 +194,7 @@
       margin-bottom: 0;
     }
 
-    &:last-child {
+    &:nth-child(4) {
       margin-right: 0;
     }
 
@@ -213,7 +213,7 @@
       right: -2px;
     }
 
-    &:last-child::after {
+    &:nth-child(4)::after {
       top: -41px;
       right: -4px;
     }
